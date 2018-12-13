@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_e2c53f0bdc2d8130dfc90161f31a5c10d28c391e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_9bfd79c97d28e0880cd013cd636d62cfc6c7e0f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/AndroidNew/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_9e8b4fbc5419ef8d832e88e6b35fc790e20effad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_543becb43cfce9cd08dcd8ac2cfd00eb62834475.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support.constraint/constraint-layout/1.0.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support.constraint-constraint-layout-1.0.2_54871125f8f0dd5fb19c9d9e35d5eb271dac1259.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_deb959d48d13ec34af8411d86d908173070bcd96.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_ff494a09f882934dc23b4f2e307b3540af126413.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_cd09e61a21d7ba36c90a16e26af25913cb0424d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_343d5a1eada0b03a0e229b1cf3640151348f0dec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_7c2785f4611bab19790fccdb55f11d0971c40aa6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_3f86d9a36d58141248d73d7825983a5abd9ec4b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_786faef4b97cb377e150377c685498c3b4bf1e05.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_8d8853cb7ffd08f108993daa161313ef87a83315.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_ccf7fb82975411041132e6dae5a4225295ce0cf5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_941a6cf3826d285be75fb747bf4ca8f0753a8417.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/AndroidNew/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_cebe352241397cb8489deafc9f8bb3165c410254.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/home/siddharth/Downloads/SocketServer-master/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_242cfc0d523a768e7875cdb1cf9ebe2fe658a0da.jar" />
+    </item>
+
+</items>
