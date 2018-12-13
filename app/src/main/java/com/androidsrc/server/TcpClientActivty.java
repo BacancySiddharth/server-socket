@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.lang.reflect.Array;
+import java.math.BigInteger;
 import java.net.Socket;
 import java.net.SocketException;
 import java.nio.charset.StandardCharsets;
@@ -97,7 +98,7 @@ public class TcpClientActivty extends Activity {
                     case 2: {
                         String string2;
                         byte[] arrby = (byte[]) message.obj;
-                        string2 = Function.hexToAs(arrby, arrby.length);
+                        string2 = Function.hexToAs(arrby, message.arg1);
                         /*if (TcpClientActivty.this.hexMode) {
                         } else {
                             try {
@@ -161,11 +162,7 @@ public class TcpClientActivty extends Activity {
 
     private void messegeDisplay(String string2, String string3) {
         String string4 = Function.replaceCode(string2);
-        try {
-            Log.e("response", "tcpwrite>>" + Arrays.toString(Function.decodeHexString(string2)));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         Log.d((String) "TcpClientActivty", string2 + " :: " + string4 + "" + ("count" + this.posi));
         sb.append(string2);
@@ -255,6 +252,9 @@ public class TcpClientActivty extends Activity {
             @Override
             public void onClick(View v) {
                 final String msg = sendEdit.getText().toString();
+                /*if(TcpClientActivty.this.mtcpReadThread!= null && TcpClientActivty.this.mtcpReadThread.isAlive()){
+                    TcpClientActivty.this.mtcpReadThread.stop();
+                }*/
 
                 new Thread() {
                     /*
@@ -318,7 +318,7 @@ public class TcpClientActivty extends Activity {
             int[] arrn = new int[]{100, 4096};
             byte[][] arrby = (byte[][]) Array.newInstance((Class) Byte.TYPE, (int[]) arrn);
             int n = 0;
-            Log.e("TcpClientActivty", "TCP>>" + Function.bytesToHexString(arrby[n]));
+//            Log.e("TcpClientActivty", "TCP>>" + Function.bytesToHexString(arrby[n]));
 
             try {
                 int n3;
@@ -332,9 +332,11 @@ public class TcpClientActivty extends Activity {
                 while (TcpClientActivty.this.connectOk) {
                     int n2 = this.tcpInStream.read(arrby[n]);
                     this.tcpInStream.read(arrby[n]);
-//                     Log.e("TAG", "TCP>>" + Function.hexToAs(arrby[n], arrby.length));
-                    Log.e("TcpClientActivty", "TCP>>" + Function.bytesToHexString(arrby[n]));
-//                    Log.e("TcpClientActivty", "COME >" +  Function.bytesToHex(arrby[n]));
+//                    BigInteger bi = new BigInteger(Function.bytesToHexString(arrby[n]),16);
+
+//                    Log.e("TAG", "TCP>>" + Arrays.toString(Function.toByteArray8(Function.bytesToHexString(arrby[n]))));
+                    Log.e("TcpClientActivty", "COME >" + Arrays.toString(Function.toByteArray(Function.bytesToHexString(arrby[n]).substring(0, n2*2))));
+
                     TcpClientActivty.this.tcpHandler.obtainMessage(2, n2, -1, (Object) arrby[n]).sendToTarget();
 
                     if (n >= 99) {

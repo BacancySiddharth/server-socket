@@ -32,6 +32,7 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.math.BigInteger;
+import java.nio.ByteBuffer;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,11 +75,19 @@ public class Function {
             if (2 + n3 * 2 <= n) {
                 int n4 = n3 * 2;
                 int n5 = 2 + n3 * 2;
+
+                BigInteger bigint = new BigInteger(string2.substring(n4, n5) + "", 16);
+                Log.d((String) "TAG", bigint.intValue() + " BIGBYTE");
                 arrby[n3] = (byte) Integer.parseInt((String) string2.substring(n4, n5), (int) 16);
+//                arrby[n3] = (byte) Integer.parseInt(bigint + "");//Integer.parseInt((String) string2.substring(n4, n5), (int) 16);
+
+
             } else {
                 int n6 = n3 * 2;
                 int n7 = 1 + n3 * 2;
                 try {
+//                    BigInteger bigint = new BigInteger(string2.substring(n6, n7) + "", 16);
+//                    arrby[n3] = (byte) Integer.parseInt(bigint + "");
                     arrby[n3] = (byte) Integer.parseInt((String) string2.substring(n6, n7), (int) 16);
                 } catch (NumberFormatException var7_8) {
                     var7_8.printStackTrace();
@@ -91,18 +100,92 @@ public class Function {
         return arrby;
     }
 
-    public static final byte[] toByteArray(final String hexString) {
-        if ((hexString.length() % 2) != 0) {
-            throw new IllegalArgumentException("Input string must contain an even number of characters");
+
+    private static byte[] hexToBytes(char[] hex) {
+        byte[] raw = new byte[hex.length / 2];
+        for (int src = 0, dst = 0; dst < raw.length; ++dst) {
+            int hi = Character.digit(hex[src++], 16);
+            int lo = Character.digit(hex[src++], 16);
+            if ((hi < 0) || (lo < 0))
+                throw new IllegalArgumentException();
+            raw[dst] = (byte) (hi << 4 | lo);
         }
-        final int len = hexString.length();
-        final byte[] data = new byte[len / 2];
+        return raw;
+    }
+
+    public static byte[] decode(String input) {
+        BigInteger bi = BigInteger.ZERO;
+        final String ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+        final BigInteger BASE = BigInteger.valueOf(ALPHABET.length());
+
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            int index = ALPHABET.indexOf(input.charAt(i));
+            if (index == -1) {
+                throw new IllegalArgumentException();
+            }
+            bi = bi.add(BASE.pow(input.length() - 1 - i).multiply(BigInteger.valueOf(index)));
+        }
+        byte[] bytes = bi.toByteArray();
+        boolean stripSignByte = bytes.length > 1 && bytes[0] == 0 && bytes[1] < 0;
+        int leadingZeros = 0;
+        for (; leadingZeros < input.length() && input.charAt(leadingZeros) == ALPHABET.charAt(0); leadingZeros++)
+            ;
+        byte[] tmp = new byte[bytes.length - (stripSignByte ? 1 : 0) + leadingZeros];
+        System.arraycopy(bytes, stripSignByte ? 1 : 0, tmp, leadingZeros, tmp.length - leadingZeros);
+        return tmp;
+    }
+
+
+    public static final String[] toByteArray(String string2) {
+        ArrayList<String> data = new ArrayList<>();
+        int n = string2.length();
+        int n2 = (int) Math.ceil((double) ((double) n / 2.0));
+        byte[] arrby = new byte[n2];
+        int n3 = 0;
+        while (n3 < n2) {
+            if (2 + n3 * 2 <= n) {
+                int n4 = n3 * 2;
+                int n5 = 2 + n3 * 2;
+
+                BigInteger bigint = new BigInteger(string2.substring(n4, n5) + "", 16);
+                Log.d((String) "TAG", bigint.intValue() + " BIGBYTE");
+                data.add(bigint + "");
+                arrby[n3] = (byte) Integer.parseInt((String) string2.substring(n4, n5), (int) 16);
+//                arrby[n3] = (byte) Integer.parseInt(bigint + "");//Integer.parseInt((String) string2.substring(n4, n5), (int) 16);
+
+
+            } else {
+                int n6 = n3 * 2;
+                int n7 = 1 + n3 * 2;
+                try {
+                    BigInteger bigint = new BigInteger(string2.substring(n6, n7) + "", 16);
+                    data.add(bigint + "");
+//                    arrby[n3] = (byte) Integer.parseInt(bigint + "");
+                    arrby[n3] = (byte) Integer.parseInt((String) string2.substring(n6, n7), (int) 16);
+                } catch (NumberFormatException var7_8) {
+                    var7_8.printStackTrace();
+                }
+            }
+            Log.d((String) "TAG", (String) ("HEX" + arrby[n3]));
+            ++n3;
+        }
+
+        String[] data1 = data.toArray(new String[data.size()]);
+
+        return data1;
+    }
+
+    public static byte[] hexStringToByteArray(String s) {
+        int len = s.length();
+        byte[] data = new byte[len / 2];
         for (int i = 0; i < len; i += 2) {
-            data[i / 2] = (byte) ((Character.digit(hexString.charAt(i), 16) << 4)
-                    + Character.digit(hexString.charAt(i + 1), 16));
+            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
+                    + Character.digit(s.charAt(i + 1), 16));
         }
         return data;
     }
+
 
     public static String getHexString(byte[] bytes) {
 
@@ -146,6 +229,13 @@ public class Function {
         return sb.toString();
     }
 
+    static byte[] toByteArray8(String s) {
+        ByteBuffer bb = ByteBuffer.allocate(16);
+        bb.asLongBuffer().put(Long.parseLong(s.substring(0, 16), 16))
+                .put(Long.parseLong(s.substring(16), 16));
+        return bb.array();
+    }
+
     public static String bytesToHex(byte[] bytes) {
         char[] hexArray = "0123456789ABCDEF".toCharArray();
         char[] hexChars = new char[bytes.length * 2];
@@ -155,6 +245,14 @@ public class Function {
             hexChars[j * 2 + 1] = hexArray[v & 0x0F];
         }
         return new String(hexChars);
+    }
+
+    public static byte[] HexStringToByteArray(String s) {
+        byte data[] = new byte[s.length() / 2];
+        for (int i = 0; i < s.length(); i += 2) {
+            data[i / 2] = (Integer.decode("0x" + s.charAt(i) + s.charAt(i + 1))).byteValue();
+        }
+        return data;
     }
 
     public static String hexToDec(String hex) {
@@ -232,6 +330,7 @@ public class Function {
         }
         return digit;
     }
+
 
     /*public static void fileControl(final Activity activity, final ArrayList<String> arrayList, final int n, final TcpClientActivty handler, String string2) {
         ArrayList arrayList2 = new ArrayList((Collection)Arrays.asList((Object[])activity.fileList()));
